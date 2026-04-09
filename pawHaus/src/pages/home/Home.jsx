@@ -1,10 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
-import "./Home.css";
-import dogImage from "../../assets/1.png";
+import Copyright from "../../components/Copyright/Copyright";
+import heroDog from "../../assets/1.png";
 import fresh from "../../assets/13.png";
 import pink from "../../assets/12.png";
 import collar from "../../assets/11.png";
+import testimonialDog from "../../assets/2.png";
+import locationImg from "../../assets/location.png";
+import facebook from "../../assets/facebook.png";
+import telephone from "../../assets/telephone.png";
+import instagram from "../../assets/instagram.png";
+import "./Home.css";
 
 const StarIcon = ({ size = 60 }) => (
   <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
@@ -63,7 +70,7 @@ export default function Home() {
             on.
           </p>
           <div className="btn-group">
-            <button className="btn-primary">Book Now</button>
+            <Link to="/booking" className="btn-primary">Book Now</Link>
             <button className="btn-secondary">View Services</button>
           </div>
         </div>
@@ -78,7 +85,7 @@ export default function Home() {
           <div className="star star-3">
             <StarIcon size={38} />
           </div>
-          <img src={dogImage} alt="Happy dog" className="dog-img" />
+          <img src={heroDog} alt="Happy dog" className="dog-img" />
         </div>
       </div>
 
@@ -102,7 +109,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* BESTSELLERS SECTION */}
+      {/* BESTSELLERS SECTION – UPDATED */}
       <div className="bestsellers">
         <div className="bestsellers-header">
           <h2 className="bestsellers-title">BESTSELLERS</h2>
@@ -157,34 +164,111 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TESTIMONIAL SECTION */}
+      {/* TESTIMONIAL SECTION – UPDATED (button now outside + below the box) */}
       <div className="testimonial">
         <h2 className="testimonial-title">TESTIMONIAL</h2>
 
         <div className="testimonial-content">
-          {/* White testimonial box */}
-          <div className="testimonial-box">
-            <div className="testimonial-header">
-              <h3 className="testimonial-name">Jennie Kim</h3>
-              <div className="stars">★★★★★</div>
+          {/* LEFT COLUMN: box + button below it */}
+          <div className="testimonial-left">
+            <div className="testimonial-box">
+              <div className="testimonial-header">
+                <h3 className="testimonial-name">Jennie Kim</h3>
+                <div className="stars">★★★★★</div>
+              </div>
+
+              <p className="testimonial-text">
+                I’ve tried a few places before, but Paw Haus stands out. The
+                team is organized, responsive, and clearly experienced. I booked
+                daycare and grooming, and both were handled smoothly. My dog
+                came back clean, calm, and well taken care of, which says a lot
+                because she’s usually anxious in new environments. I also like
+                that everything runs on a clear routine, so I know what to
+                expect each time. It feels reliable, and that’s the main reason
+                I keep coming back.
+              </p>
             </div>
 
-            <p className="testimonial-text">
-              I’ve tried a few places before, but Paw Haus stands out. The team
-              is organized, responsive, and clearly experienced. I booked
-              daycare and grooming, and both were handled smoothly. My dog came
-              back clean, calm, and well taken care of, which says a lot because
-              she’s usually anxious in new environments. I also like that
-              everything runs on a clear routine, so I know what to expect each
-              time. It feels reliable, and that’s the main reason I keep coming
-              back.
-            </p>
-
+            {/* Button is now OUTSIDE the white box and below it */}
             <button className="read-more-btn">Read More</button>
           </div>
-
         </div>
       </div>
+
+      {/* QUESTIONS SECTION */}
+      <div className="questions">
+        <div className="questions-content">
+          <h2 className="questions-title">HAVE ANY QUESTIONS?</h2>
+          <button className="questions-btn">Contact Us</button>
+        </div>
+        <img src={testimonialDog} alt="Dog" className="questions-dog" />
+      </div>
+
+      {/* FOOTER SECTION */}
+      <div className="footer">
+        {/* LEFT */}
+        <div className="footer-left">
+          <img src={locationImg} alt="Map" className="map-img" />
+          <h3 className="find-us-title">HOW TO FIND US</h3>
+          <p className="find-us-address">
+            No. 18, Street 240
+            <br />
+            Sangkat Chaktomuk, Khan Daun Penh
+            <br />
+            Phnom Penh 12302
+            <br />
+            Cambodia
+          </p>
+        </div>
+
+        {/* RIGHT */}
+        <div className="footer-right">
+          {/* Newsletter */}
+          <div className="newsletter">
+            <h2 className="newsletter-title">
+              Get the Latest Updates.
+              <br />
+              Stay informed with our newest
+              <br />
+              services, offers, and pet care tips!
+            </h2>
+            <div className="email-input-wrapper">
+              <span className="email-icon">✉</span>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="email-input"
+              />
+            </div>
+            <button className="subscribe-btn">Subscribe</button>
+            <p className="no-spam">No spam. Only helpful information.</p>
+          </div>
+
+          {/* Social */}
+          <div className="social">
+            <h3 className="social-title">
+              TRUSTED BY PET OWNERS ACROSS CAMBODIA
+            </h3>
+            <div className="social-grid">
+              <div className="social-item">
+                <img src={facebook} alt="Facebook" className="social-icon" />
+                <span>Paw Haus</span>
+              </div>
+              <div className="social-item">
+                <img src={telephone} alt="Phone" className="social-icon" />
+                <span>+(855) 96 444 7314</span>
+              </div>
+              <div className="social-item">
+                <img src={instagram} alt="Instagram" className="social-icon" />
+                <span>@pawhaus.co</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* COPYRIGHT */}
+      <Copyright />
     </div>
   );
 }

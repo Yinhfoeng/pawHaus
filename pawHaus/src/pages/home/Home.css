@@ -1,15 +1,16 @@
 .page {
+  min-height: 100vh;
   background-color: #8a9a2d;
   font-family: 'Georgia', serif;
-  overflow: hidden;
+  overflow: visible;  /* ← change from hidden to visible */
 }
 
 .hero {
-  height: 80vh;
   display: flex;
   align-items: center;
-  /* padding: 40px 48px 0 48px; */
-  min-height: calc(80vh - 90px);   /* ← 80vh minus navbar height */
+  padding: 40px 48px 0 48px;
+  height: 75vh;
+  overflow: hidden;  /* ← add this */
 }
 
 .hero-left {
@@ -78,19 +79,18 @@
 .hero-right {
   flex: 1;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 40px 48px 0 48px;
+  height: calc(100vh - 90px);
+  overflow: hidden;
 }
 
 .dog-img {
   width: 100%;
-  max-width: 540px;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 2;
+  object-position: center top;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .star {
@@ -162,17 +162,18 @@
   background-color: #3e2b1c;
 }
 
-/* ── BESTSELLERS ── */
+/* ── REPLACE your entire BESTSELLERS CSS block with this updated version ── */
+
 .bestsellers {
   background-color: #c5d5e8;
-  padding: 48px;
+  padding: 50px 48px 50px 48px;
 }
 
 .bestsellers-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .bestsellers-title {
@@ -181,6 +182,7 @@
   color: #2c1f14;
   letter-spacing: 1px;
   font-family: 'Georgia', serif;
+  margin: 0;
 }
 
 .see-all {
@@ -191,19 +193,53 @@
   font-family: 'Georgia', serif;
 }
 
+/* Grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
 }
 
+/* Product card – now SMALLER overall */
 .product-card {
   background-color: white;
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 20px;
+  padding: 14px;                    /* smaller padding = smaller card */
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  height: 90%;
+  box-shadow: 0 6px 16px rgba(44, 31, 20, 0.1); /* subtle lift like your reference */
+}
+
+/* Image area – now BIGGER inside the smaller card */
+.product-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 255px;                    /* taller image area */
+  background-color: #f8f8f8;        /* very light bg so image pops */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-img {
+  max-height: 235px;                /* much bigger image */
+  object-fit: contain;
+  transition: transform 0.3s ease;  /* nice hover effect */
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.04);
+}
+
+/* Footer (name + price) */
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 8px;
 }
 
 .product-category {
@@ -212,25 +248,6 @@
   color: #2c1f14;
   font-family: 'Georgia', serif;
   letter-spacing: 1px;
-}
-
-.product-img-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-
-.product-img {
-  max-height: 180px;
-  object-fit: contain;
-}
-
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: auto;
 }
 
 .product-name {
@@ -244,7 +261,7 @@
 .product-desc {
   font-size: 13px;
   color: #666;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .product-price {
@@ -314,14 +331,101 @@
   letter-spacing: 3px;
 }
 
-/* Testimonial text */
+/* ── REPLACE your entire TESTIMONIAL SECTION in Home.css with this ── */
+
+.testimonial {
+  background-color: #f5f0a8;
+  padding: 50px 70px 55px 115px;
+}
+
+.testimonial-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: #2c1f14;
+  letter-spacing: 1px;
+  font-family: 'Georgia', serif;
+  margin-bottom: 32px;
+  padding-left: 8px;
+  margin-top: 0;
+}
+
+/* Flex row: left column (box + button) + dog */
+.testimonial-content {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  max-width: 1180px;
+  margin: 0 0 0 8px;           /* keeps perfect left alignment with title */
+}
+
+/* New wrapper for box + button */
+.testimonial-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;                    /* space between box and Read More button */
+  flex: 1;
+  max-width: 820px;
+}
+
+/* White box – now without the button inside */
+.testimonial-box {
+  background-color: #fff;
+  border: 3px solid #2c1f14;    /* added to match your screenshot exactly */
+  border-radius: 24px;
+  padding: 38px 38px 32px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(44, 31, 20, 0.12);
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.testimonial-name {
+  font-size: 24px;
+  font-weight: 900;
+  color: #2c1f14;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.stars {
+  font-size: 28px;
+  color: #2c1f14;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
 .testimonial-text {
   color: #2c1f14;
   font-size: 15.5px;
   line-height: 1.75;
   font-family: 'Georgia', serif;
-  margin-bottom: 32px;
+  margin-bottom: 0;             /* no extra space needed anymore */
 }
+
+/* Read More button – now sitting below the box on the yellow background */
+.read-more-btn {
+  background-color: #2c1f14;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 34px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 4px;             /* tiny nudge to stay aligned with text */
+}
+
+.read-more-btn:hover {
+  background-color: #3e2b1c;
+}
+
 
 /* Read More button – matches your other buttons */
 .read-more-btn {
@@ -338,5 +442,208 @@
 
 .read-more-btn:hover {
   background-color: #3e2b1c;
+}
+
+/* ── QUESTIONS ── */
+.questions {
+  background-color: #2c1a0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 280px;
+  overflow: visible;
+}
+
+.questions-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+  flex: 1;
+  text-align: center;
+}
+
+.questions-title {
+  color: white;
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+}
+
+.questions-btn {
+  background-color: #f5ede0;
+  color: #2c1a0e;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.questions-btn:hover {
+  background-color: #e8ddd0;
+}
+
+.questions-dog {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 200%;        /* ← increase this */
+  max-height: 530px;   /* ← increase this too */
+  object-fit: contain;
+  z-index: 10;
+}
+
+
+/* ── FOOTER ── */
+.footer {
+  background-color: #fef9c3;
+  display: flex;
+  padding: 48px;
+  align-items: flex-start;
+}
+
+/* LEFT */
+.footer-left {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: 85px;
+}
+
+.map-img {
+  width: 70%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.find-us-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2c1a0e;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.find-us-address {
+  font-size: 15px;
+  color: #2c1a0e;
+  line-height: 1.8;
+  font-family: 'Georgia', serif;
+  margin-top: 0px;
+}
+
+/* RIGHT */
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-right: 50px;
+}
+
+/* Newsletter */
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.newsletter-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c1a0e;
+  font-family: 'Georgia', serif;
+  line-height: 1.7;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.email-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 14px 18px;
+  gap: 12px;
+  max-width: 500px;
+}
+
+.email-icon {
+  font-size: 18px;
+  color: #999;
+}
+
+.email-input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+  font-family: 'Georgia', serif;
+  background: transparent;
+  color: #444;
+}
+
+.subscribe-btn {
+  background-color: #2c1a0e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.subscribe-btn:hover {
+  background-color: #3e2b1c;
+}
+
+.no-spam {
+  font-size: 13px;
+  color: #888;
+  font-family: 'Georgia', serif;
+}
+
+/* Social */
+.social-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #2c1a0e;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-family: 'Georgia', serif;
+  color: #2c1a0e;
+  font-weight: 500;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
