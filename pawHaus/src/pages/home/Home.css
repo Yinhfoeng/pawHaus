@@ -493,8 +493,8 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  height: 200%;        /* ← increase this */
-  max-height: 530px;   /* ← increase this too */
+  height: 300%;        /* ← increase this */
+  max-height: 630px;   /* ← increase this too */
   object-fit: contain;
   z-index: 10;
 }

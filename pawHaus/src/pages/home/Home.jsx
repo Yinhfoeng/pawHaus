@@ -208,7 +208,9 @@ export default function Home() {
       <div className="footer">
         {/* LEFT */}
         <div className="footer-left">
-          <img src={locationImg} alt="Map" className="map-img" />
+          <a href="https://maps.app.goo.gl/idKbq7xAYURuq6vq8" target="_blank" rel="noopener noreferrer">
+            <img src={locationImg} alt="Map" className="map-img" />
+          </a>
           <h3 className="find-us-title">HOW TO FIND US</h3>
           <p className="find-us-address">
             No. 18, Street 240
