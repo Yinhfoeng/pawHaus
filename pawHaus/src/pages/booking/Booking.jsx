@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar_Booking from "../../components/NavBar/Navbar_Booking";
 import "./Booking.css";
 import Copyright from "../../components/Copyright/Copyright";
 
@@ -31,7 +31,7 @@ const Booking = () => {
 
   return (
     <div className="booking-page">
-      <NavBar />
+      <NavBar_Booking />
 
       <div className="booking-container">
         <h1 className="booking-title">MANAGE BOOKING</h1>

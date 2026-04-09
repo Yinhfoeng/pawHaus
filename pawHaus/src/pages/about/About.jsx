@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar_About from "../../components/NavBar/Navbar_About";
 import "./About.css";
 import dogImage from "../../assets/1.png";
 import fresh from "../../assets/13.png";
@@ -51,7 +51,7 @@ export default function About() {
   return (
     <div className="page">
       {/* NAVBAR */}
-      <NavBar />
+      <NavBar_About />
 
       {/* HERO */}
       <div className="hero">

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
 import Copyright from "../../components/Copyright/Copyright";
 import heroDog from "../../assets/1.png";
 import fresh from "../../assets/13.png";
@@ -12,6 +11,7 @@ import facebook from "../../assets/facebook.png";
 import telephone from "../../assets/telephone.png";
 import instagram from "../../assets/instagram.png";
 import "./Home.css";
+import NavBar_Home from "../../components/NavBar/Navbar_Home";
 
 const StarIcon = ({ size = 60 }) => (
   <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className="page">
       {/* NAVBAR */}
-      <NavBar />
+      <NavBar_Home />
 
       {/* HERO */}
       <div className="hero">

@@ -1,13 +1,11 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import pawsLogo from "../../assets/paws.png";
-import "./NavBar.css";
+import "./Navbar_Services.css";
 
-const NavBar = () => {
-  const location = useLocation();
-
+const NavBar_Services = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar-services">
       {/* Logo */}
       <Link to="/" className="nav-logo">
         <img src={pawsLogo} alt="Paw Haus" className="logo-img" />
@@ -50,4 +48,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBar_Services;
