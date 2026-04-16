@@ -1,0 +1,160 @@
+.contact-page {
+  min-height: 100vh;
+  background-color: #f5ede0;
+  font-family: 'Georgia', serif;
+}
+
+.contact-content {
+  padding: 48px 60px;
+}
+
+/* TITLE */
+.contact-title {
+  font-size: 56px;
+  font-weight: 900;
+  color: #2c1a0e;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+/* BODY LAYOUT */
+.contact-body {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* LEFT */
+.contact-left {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c1a0e;
+  margin-bottom: 4px;
+}
+
+.input-row {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1.5px solid #c8b8a2;
+  border-radius: 10px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  background-color: transparent;
+  color: #2c1a0e;
+  outline: none;
+}
+
+.contact-input::placeholder {
+  color: #aaa;
+}
+
+.contact-input:focus {
+  border-color: #2c1a0e;
+}
+
+.contact-textarea {
+  width: 95%;
+  height: 210px;
+  padding: 16px;
+  border: 1.5px solid #c8b8a2;
+  border-radius: 10px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  background-color: transparent;
+  color: #2c1a0e;
+  outline: none;
+  resize: none;
+}
+
+.contact-textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-textarea:focus {
+  border-color: #2c1a0e;
+}
+
+.send-btn {
+  background-color: #2c1a0e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.send-btn:hover {
+  background-color: #3e2b1c;
+}
+
+/* RIGHT */
+.contact-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 8px;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c1a0e;
+  margin-bottom: 0;
+  margin-top: 17px;
+}
+
+.info-text {
+  font-size: 15px;
+  color: #2c1a0e;
+  line-height: 1.8;
+  margin-top: 0;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.social-text {
+  font-size: 15px;
+  color: #5a3a1a;
+  font-weight: 500;
+}

@@ -29,7 +29,7 @@ const NavBar_Shop = () => {
       </div>
 
       {/* Contact Us Button */}
-      <Link to="/booking" className="contact-btn">
+      <Link to="/contact" className="contact-btn">
         Contact Us
       </Link>
     </nav>

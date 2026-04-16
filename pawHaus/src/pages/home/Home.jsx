@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Copyright from "../../components/Copyright/Copyright";
-import heroDog from "../../assets/1.png";
+import dog from "../../assets/dog.png";
 import fresh from "../../assets/13.png";
 import pink from "../../assets/12.png";
 import collar from "../../assets/11.png";
@@ -13,48 +13,20 @@ import instagram from "../../assets/instagram.png";
 import "./Home.css";
 import NavBar_Home from "../../components/NavBar/Navbar_Home";
 
-const StarIcon = ({ size = 60 }) => (
-  <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
-    <line
-      x1="30"
-      y1="0"
-      x2="30"
-      y2="60"
-      stroke="white"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <line
-      x1="0"
-      y1="30"
-      x2="60"
-      y2="30"
-      stroke="white"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <line
-      x1="8"
-      y1="8"
-      x2="52"
-      y2="52"
-      stroke="white"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <line
-      x1="52"
-      y1="8"
-      x2="8"
-      y2="52"
-      stroke="white"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const [emailError, setEmailError] = useState(""); // ← missing this line
+
+  const handleSubscribe = () => {
+    if (email.trim() === "") {
+      setEmailError("Email is required.");
+      return;
+    }
+    setEmailError("");
+    setSubscribed(true);
+    setEmail("");
+  };
   return (
     <div className="page">
       {/* NAVBAR */}
@@ -70,22 +42,15 @@ export default function Home() {
             on.
           </p>
           <div className="btn-group">
-            <Link to="/booking" className="btn-primary">Book Now</Link>
+            <Link to="/booking" className="btn-primary">
+              Book Now
+            </Link>
             <button className="btn-secondary">View Services</button>
           </div>
         </div>
 
         <div className="hero-right">
-          <div className="star star-1">
-            <StarIcon size={72} />
-          </div>
-          <div className="star star-2">
-            <StarIcon size={50} />
-          </div>
-          <div className="star star-3">
-            <StarIcon size={38} />
-          </div>
-          <img src={heroDog} alt="Happy dog" className="dog-img" />
+          <img src={dog} alt="Happy dog" className="dog-img" />
         </div>
       </div>
 
@@ -113,54 +78,56 @@ export default function Home() {
       <div className="bestsellers">
         <div className="bestsellers-header">
           <h2 className="bestsellers-title">BESTSELLERS</h2>
-          <span className="see-all">SEE ALL</span>
+          <Link to="/shop" className="see-all">
+            SEE ALL
+          </Link>
         </div>
 
         <div className="products-grid">
-          {/* Card 1 */}
-          <div className="product-card">
-            <p className="product-category">TREAT</p>
-            <div className="product-img-wrapper">
-              <img src={fresh} alt="Fresh Kisses" className="product-img" />
-            </div>
-            <div className="product-footer">
-              <div>
-                <p className="product-name">FRESH KISSES</p>
-                <p className="product-desc">Healthy. Tasty. Rewarding.</p>
-              </div>
-              <p className="product-price">$16.00</p>
-            </div>
-          </div>
+{/* Card 1 */}
+<Link to="/shop" state={{ productId: 1 }} className="product-card" style={{ textDecoration: "none" }}>
+  <p className="product-category">TREAT</p>
+  <div className="product-img-wrapper">
+    <img src={fresh} alt="Fresh Kisses" className="product-img" />
+  </div>
+  <div className="product-footer">
+    <div>
+      <p className="product-name">FRESH KISSES</p>
+      <p className="product-desc">Healthy. Tasty. Rewarding.</p>
+    </div>
+    <p className="product-price">$16.00</p>
+  </div>
+</Link>
 
-          {/* Card 2 */}
-          <div className="product-card">
-            <p className="product-category">TOY</p>
-            <div className="product-img-wrapper">
-              <img src={pink} alt="Pink Toy" className="product-img" />
-            </div>
-            <div className="product-footer">
-              <div>
-                <p className="product-name">PINK</p>
-                <p className="product-desc">Playtime made better.</p>
-              </div>
-              <p className="product-price">$25.00</p>
-            </div>
-          </div>
+{/* Card 2 */}
+<Link to="/shop" state={{ productId: 2 }} className="product-card" style={{ textDecoration: "none" }}>
+  <p className="product-category">TOY</p>
+  <div className="product-img-wrapper">
+    <img src={pink} alt="Pink Toy" className="product-img" />
+  </div>
+  <div className="product-footer">
+    <div>
+      <p className="product-name">PINK</p>
+      <p className="product-desc">Playtime made better.</p>
+    </div>
+    <p className="product-price">$25.00</p>
+  </div>
+</Link>
 
-          {/* Card 3 */}
-          <div className="product-card">
-            <p className="product-category">ACCESSORY</p>
-            <div className="product-img-wrapper">
-              <img src={collar} alt="Leather Collar" className="product-img" />
-            </div>
-            <div className="product-footer">
-              <div>
-                <p className="product-name">LEATHER COLLAR</p>
-                <p className="product-desc">Real leather, made personal.</p>
-              </div>
-              <p className="product-price">$50.00</p>
-            </div>
-          </div>
+{/* Card 3 */}
+<Link to="/shop" state={{ productId: 3 }} className="product-card" style={{ textDecoration: "none" }}>
+  <p className="product-category">ACCESSORY</p>
+  <div className="product-img-wrapper">
+    <img src={collar} alt="Leather Collar" className="product-img" />
+  </div>
+  <div className="product-footer">
+    <div>
+      <p className="product-name">LEATHER COLLAR</p>
+      <p className="product-desc">Real leather, made personal.</p>
+    </div>
+    <p className="product-price">$50.00</p>
+  </div>
+</Link>
         </div>
       </div>
 
@@ -199,7 +166,9 @@ export default function Home() {
       <div className="questions">
         <div className="questions-content">
           <h2 className="questions-title">HAVE ANY QUESTIONS?</h2>
-          <button className="questions-btn">Contact Us</button>
+          <Link to="/contact" className="questions-btn">
+            Contact Us
+          </Link>
         </div>
         <img src={testimonialDog} alt="Dog" className="questions-dog" />
       </div>
@@ -208,7 +177,11 @@ export default function Home() {
       <div className="footer">
         {/* LEFT */}
         <div className="footer-left">
-          <a href="https://maps.app.goo.gl/idKbq7xAYURuq6vq8" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://maps.app.goo.gl/idKbq7xAYURuq6vq8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={locationImg} alt="Map" className="map-img" />
           </a>
           <h3 className="find-us-title">HOW TO FIND US</h3>
@@ -234,16 +207,35 @@ export default function Home() {
               <br />
               services, offers, and pet care tips!
             </h2>
-            <div className="email-input-wrapper">
+            <div
+              className={`email-input-wrapper ${emailError ? "input-error" : ""}`}
+            >
               <span className="email-icon">✉</span>
               <input
                 type="email"
                 placeholder="Enter your email address"
                 className="email-input"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError("");
+                }}
               />
             </div>
-            <button className="subscribe-btn">Subscribe</button>
-            <p className="no-spam">No spam. Only helpful information.</p>
+
+            {emailError && <p className="error-msg">{emailError}</p>}
+
+            <button className="subscribe-btn" onClick={handleSubscribe}>
+              Subscribe
+            </button>
+
+            {subscribed ? (
+              <p className="subscribed-msg">
+                ✅ You've successfully subscribed!
+              </p>
+            ) : (
+              <p className="no-spam">No spam. Only helpful information.</p>
+            )}
           </div>
 
           {/* Social */}

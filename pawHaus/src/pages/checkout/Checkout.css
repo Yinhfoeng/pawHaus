@@ -1,0 +1,271 @@
+.checkout-page {
+  min-height: 100vh;
+  background-color: #f5ede0;
+  font-family: 'Georgia', serif;
+}
+
+.checkout-content {
+  padding: 48px 60px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c1a0e;
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.checkout-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #2c1a0e;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+/* LAYOUT */
+.checkout-body {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* LEFT */
+.checkout-left {
+  flex: 0 0 52%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.co-section-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c1a0e;
+  margin: 8px 0 4px 0;
+}
+
+.co-input-row {
+  display: flex;
+  gap: 14px;
+}
+
+.co-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1.5px solid #c8b8a2;
+  border-radius: 10px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  background-color: transparent;
+  color: #2c1a0e;
+  outline: none;
+}
+
+.co-input::placeholder { color: #aaa; }
+.co-input:focus { border-color: #2c1a0e; }
+.co-full { width: 100%; box-sizing: border-box; }
+
+/* DELIVERY */
+.delivery-box {
+  border: 1.5px solid #c8b8a2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.delivery-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  border-bottom: 1.5px solid #c8b8a2;
+}
+
+.delivery-option:last-child { border-bottom: none; }
+
+.delivery-option input[type="radio"] {
+  accent-color: #2c1a0e;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.delivery-info { flex: 1; }
+
+.delivery-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c1a0e;
+  margin: 0;
+}
+
+.delivery-desc {
+  font-size: 13px;
+  color: #888;
+  margin: 2px 0 0 0;
+}
+
+.delivery-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c1a0e;
+}
+
+.delivery-selected {
+  background-color: rgba(44, 26, 14, 0.04);
+}
+
+/* PAYMENT */
+.payment-box {
+  border: 1.5px solid #c8b8a2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  border-bottom: 1.5px solid #c8b8a2;
+}
+
+.payment-option:last-child { border-bottom: none; }
+
+.payment-option input[type="radio"] {
+  accent-color: #2c1a0e;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.payment-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c1a0e;
+}
+
+.payment-selected {
+  background-color: rgba(44, 26, 14, 0.04);
+}
+
+/* PAY BUTTON */
+.pay-btn {
+  background-color: #2c1a0e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 18px;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.pay-btn:hover { background-color: #3e2b1c; }
+
+/* RIGHT - ORDER SUMMARY */
+.checkout-right { flex: 1; }
+
+.order-box {
+  background-color: #ede8d8;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c1a0e;
+  font-family: 'Georgia', serif;
+  margin: 0;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-empty {
+  font-size: 14px;
+  color: #888;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.order-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.order-item-info { flex: 1; }
+
+.order-item-name {
+  font-size: 14px;
+  font-weight: 900;
+  color: #2c1a0e;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.order-item-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c1a0e;
+  white-space: nowrap;
+}
+
+/* TOTALS */
+.order-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c1a0e;
+  letter-spacing: 0.5px;
+}
+
+.order-divider {
+  border: none;
+  border-top: 1.5px solid #c8b8a2;
+  margin: 4px 0;
+}
+
+.order-total-row {
+  font-size: 16px;
+  font-weight: 900;
+}

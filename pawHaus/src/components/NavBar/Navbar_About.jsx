@@ -6,30 +6,19 @@ import "./Navbar_About.css";
 const NavBar_About = () => {
   return (
     <nav className="navbar-about">
-      {/* Logo */}
       <Link to="/" className="nav-logo">
         <img src={pawsLogo2} alt="Paw Haus" className="logo-img" />
         <span>PAW HAUS</span>
       </Link>
 
-      {/* Menu Links */}
       <div className="nav-links">
-        <Link to="/" className="nav-link">
-          Home
-        </Link>
-        <Link to="/services" className="nav-link">
-          Services
-        </Link>
-        <Link to="/shop" className="nav-link">
-          Shop
-        </Link>
-        <Link to="/about" className="nav-link active">
-          About Us
-        </Link>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/services" className="nav-link">Services</Link>
+        <Link to="/shop" className="nav-link">Shop</Link>
+        <Link to="/about" className="nav-link active">About Us</Link>
       </div>
 
-      {/* Contact Us Button */}
-      <Link to="/booking" className="contact-btn">
+      <Link to="/contact" className="contact-btn">
         Contact Us
       </Link>
     </nav>

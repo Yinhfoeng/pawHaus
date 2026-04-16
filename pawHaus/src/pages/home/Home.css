@@ -8,7 +8,7 @@
 .hero {
   display: flex;
   align-items: center;
-  padding: 40px 48px 0 48px;
+  /* padding: 40px 48px 0 48px; */
   height: 75vh;
   overflow: hidden;  /* ← add this */
 }
@@ -54,6 +54,7 @@
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -84,13 +85,13 @@
 }
 
 .dog-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 90%;
+  height: 90%;
+  object-fit: contain; /* cover vs contain */
   object-position: center top;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 80px;
 }
 
 .star {
@@ -190,6 +191,7 @@
   font-weight: 700;
   color: #2c1f14;
   cursor: pointer;
+  text-decoration: none;
   font-family: 'Georgia', serif;
 }
 
@@ -218,7 +220,7 @@
   justify-content: center;
   align-items: center;
   height: 255px;                    /* taller image area */
-  background-color: #f8f8f8;        /* very light bg so image pops */
+  /* background-color: #f8f8f8;        */
   border-radius: 12px;
   overflow: hidden;
 }
@@ -273,69 +275,12 @@
 }
 
 
-/* TESTIMONIAL SECTION */
-.testimonial {
-  background-color: #f5f0a8;          
-  padding: 70px 48px 110px;
-}
-
-.testimonial-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: #2c1f14;
-  letter-spacing: 1px;
-  font-family: 'Georgia', serif;
-  margin-bottom: 32px;
-  padding-left: 8px;
-}
-
-/* Flex container for box + dog */
-.testimonial-content {
-  display: flex;
-  align-items: flex-end;
-  gap: 40px;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-/* White rounded box */
-.testimonial-box {
-  background-color: #fff;
-  border-radius: 24px;
-  padding: 42px 42px 36px;
-  flex: 1;
-  max-width: 640px;
-  box-shadow: 0 8px 25px rgba(44, 31, 20, 0.12);
-}
-
-/* Name + stars row */
-.testimonial-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.testimonial-name {
-  font-size: 24px;
-  font-weight: 900;
-  color: #2c1f14;
-  margin: 0;
-  font-family: 'Georgia', serif;
-}
-
-.stars {
-  font-size: 28px;
-  color: #2c1f14;
-  line-height: 1;
-  letter-spacing: 3px;
-}
 
 /* ── REPLACE your entire TESTIMONIAL SECTION in Home.css with this ── */
 
 .testimonial {
   background-color: #f5f0a8;
-  padding: 50px 70px 55px 115px;
+  padding: 50px 70px 55px 70px;
 }
 
 .testimonial-title {
@@ -374,7 +319,7 @@
   border: 3px solid #2c1f14;    /* added to match your screenshot exactly */
   border-radius: 24px;
   padding: 38px 38px 32px;
-  width: 100%;
+  width: 110%;
   box-shadow: 0 8px 25px rgba(44, 31, 20, 0.12);
 }
 
@@ -483,6 +428,7 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .questions-btn:hover {
@@ -609,10 +555,28 @@
   background-color: #3e2b1c;
 }
 
+.subscribed-msg {
+  font-size: 14px;
+  color: #2c1a0e;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+}
+
 .no-spam {
   font-size: 13px;
   color: #888;
   font-family: 'Georgia', serif;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: red;
+  font-family: 'Georgia', serif;
+  margin: 0;
+}
+
+.input-error {
+  border: 1.5px solid red;
 }
 
 /* Social */
