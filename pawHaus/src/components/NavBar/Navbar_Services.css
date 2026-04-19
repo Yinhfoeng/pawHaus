@@ -10,10 +10,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 22px 48px;
-  background-color: blue;
+  background-color: #b6cfe4;
 }
 
-.nav-logo {
+.navbar-services .nav-logo,
+.navbar-services .nav-logo:link,
+.navbar-services .nav-logo:visited {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -34,7 +36,9 @@ body {
   gap: 40px;
 }
 
-.nav-link {
+.navbar-services .nav-link,
+.navbar-services .nav-link:link,
+.navbar-services .nav-link:visited {
   text-decoration: none;
   color: white !important;
   font-size: 17px;
@@ -43,9 +47,10 @@ body {
   transition: all 0.2s;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: white;
+.navbar-services .nav-link:hover,
+.navbar-services .nav-link:active,
+.navbar-services .nav-link.active {
+  color: white !important;
   text-decoration: underline;
   text-underline-offset: 6px;
 }

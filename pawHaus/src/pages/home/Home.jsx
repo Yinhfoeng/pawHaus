@@ -28,7 +28,7 @@ export default function Home() {
     setEmail("");
   };
   return (
-    <div className="page">
+    <div className="home-page">
       {/* NAVBAR */}
       <NavBar_Home />
 

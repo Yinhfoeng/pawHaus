@@ -1,340 +1,170 @@
-.page {
-  background-color: #f5ede0;
-  font-family: 'Georgia', serif;
-  overflow: hidden;
+.about-page {
+  min-height: 100vh;
+  background-color: #fff6ea;
+  font-family: "Georgia", serif;
 }
 
-.hero {
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  /* padding: 40px 48px 0 48px; */
-  min-height: calc(80vh - 90px);   /* ← 80vh minus navbar height */
+/* ── HERO ── */
+.about-hero {
+  padding: 60px 80px 20px 80px;
 }
 
-.hero-left {
-  padding: 0 0 0 70px;
-  flex: 0 0 50%;
-  z-index: 5;
-}
-
-.hero-title {
-  color: white;
-  font-size: clamp(40px, 5vw, 68px);
+.about-hero-title {
+  font-family: "Georgia", serif;
+  font-size: clamp(40px, 6vw, 72px);
   font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: 3px;
+  color: #3E2723;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  margin-top: 0;
-}
-
-.hero-subtitle {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 15px;
-  line-height: 1.7;
-  max-width: 460px;
-  margin-bottom: 36px;
-}
-
-.btn-group {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.btn-primary {
-  background-color: #2c1f14;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 14px 28px;
-  font-family: 'Georgia', serif;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: #3e2b1c;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2.5px solid white;
-  border-radius: 8px;
-  padding: 12px 26px;
-  font-family: 'Georgia', serif;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.hero-right {
-  flex: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 40px 48px 0 48px;
-}
-
-.dog-img {
-  width: 100%;
-  max-width: 540px;
-  object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 2;
-}
-
-.star {
-  position: absolute;
-  z-index: 3;
-}
-
-.star-1 { top: 20px;  right: 260px; }
-.star-2 { top: 80px;  right: 110px; }
-.star-3 { top: 190px; right: 50px;  }
-
-/* who we are */
-.who-we-are {
-  display: flex;
-  align-items: center;
-  background-color: #f5f0a8;
-  padding: 50px 38px;
-  gap: 60px;
-  height: 20vh;
-}
-
-.who-left {
-  flex: 0 0 350px;
-  width: 400px;
-}
-
-.who-title {
-  color: #2c1f14;
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 900;
-  line-height: 1.1;
   letter-spacing: 3px;
-  text-transform: uppercase;
-  font-family: 'Georgia', serif;
-  margin-left: 20px;
+  margin: 0;
 }
 
-.who-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin-left: 120px;
+/* ── SECTIONS ── */
+.about-section {
+  padding: 40px 80px;
 }
 
-.who-text {
-  color: #2c1f14;
-  font-size: 16px;
-  line-height: 1.7;
-  font-family: 'Georgia', serif;
-  max-width: 700px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.who-btn {
-  background-color: #2c1f14;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 14px 28px;
-  font-family: 'Georgia', serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  width: fit-content;
-}
-
-.who-btn:hover {
-  background-color: #3e2b1c;
-}
-
-/* ── BESTSELLERS ── */
-.bestsellers {
-  background-color: #c5d5e8;
-  padding: 48px;
-}
-
-.bestsellers-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 28px;
-}
-
-.bestsellers-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: #2c1f14;
-  letter-spacing: 1px;
-  font-family: 'Georgia', serif;
-}
-
-.see-all {
-  font-size: 18px;
+.about-section-label {
+  font-family: "Georgia", serif;
+  font-size: 25px;
   font-weight: 700;
-  color: #2c1f14;
-  cursor: pointer;
-  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3E2723;
+  margin: 0 0 24px 0;
 }
 
-.products-grid {
+/* ── MISSION ── */
+.mission-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
 }
 
-.product-card {
-  background-color: white;
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.product-category {
+.about-body {
   font-size: 18px;
-  font-weight: 900;
-  color: #2c1f14;
-  font-family: 'Georgia', serif;
-  letter-spacing: 1px;
+  color: #3E2723;
+  line-height: 1.85;
+  margin: 0;
+  text-align: justify;
 }
 
-.product-img-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+/* ── STEPS ── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
 }
 
-.product-img {
-  max-height: 180px;
-  object-fit: contain;
+.step-card {
+  border-radius: 16px;
+  padding: 28px;
+  border: 2px solid transparent;
 }
 
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: auto;
+.step-blue {
+  background-color: #c9d9ea;
+  border-color: #6a8faa;
 }
 
-.product-name {
-  font-size: 15px;
-  font-weight: 900;
-  color: #2c1f14;
-  font-family: 'Georgia', serif;
-  letter-spacing: 0.5px;
+.step-yellow {
+  background-color: #f0e8c0;
+  border-color: #c8b050;
 }
 
-.product-desc {
-  font-size: 13px;
-  color: #666;
-  margin-top: 4px;
+.step-green {
+  background-color: #8a9a40;
+  border-color: #6a7a30;
 }
-.product-price {
-  font-size: 16px;
+
+.step-number {
+  font-size: 25px;
   font-weight: 700;
-  color: #2c1f14;
-  font-family: 'Georgia', serif;
-  white-space: nowrap;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  color: #3E2723;
 }
 
-
-/* TESTIMONIAL SECTION */
-.testimonial {
-  background-color: #f5f0a8;          
-  padding: 70px 48px 110px;
+.step-green .step-number,
+.step-green .step-title,
+.step-green .step-body {
+  color: #fff6ea;
 }
 
-.testimonial-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: #2c1f14;
-  letter-spacing: 1px;
-  font-family: 'Georgia', serif;
-  margin-bottom: 32px;
-  padding-left: 8px;
+.step-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3E2723;
+  margin: 0 0 12px 0;
 }
 
-/* Flex container for box + dog */
-.testimonial-content {
-  display: flex;
-  align-items: flex-end;
-  gap: 40px;
-  max-width: 1180px;
-  margin: 0 auto;
+.step-body {
+  font-size: 18px;
+  color: #3E2723;
+  line-height: 1.7;
+  margin: 0;
 }
 
-/* White rounded box */
-.testimonial-box {
-  background-color: #fff;
-  border-radius: 24px;
-  padding: 42px 42px 36px;
-  flex: 1;
-  max-width: 640px;
-  box-shadow: 0 8px 25px rgba(44, 31, 20, 0.12);
+/* ── TESTIMONIAL ── */
+.testimonial-card {
+  border: 1px solid #3E2723;
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin-bottom: 28px;
+  background: #ffffff;
 }
 
-/* Name + stars row */
 .testimonial-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 
 .testimonial-name {
-  font-size: 24px;
-  font-weight: 900;
-  color: #2c1f14;
-  margin: 0;
-  font-family: 'Georgia', serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #3E2723;
 }
 
-.stars {
-  font-size: 28px;
-  color: #2c1f14;
-  line-height: 1;
+.testimonial-stars {
+  font-size: 25px;
+  color: #3E2723;
   letter-spacing: 3px;
 }
 
-/* Testimonial text */
-.testimonial-text {
-  color: #2c1f14;
-  font-size: 15.5px;
-  line-height: 1.75;
-  font-family: 'Georgia', serif;
-  margin-bottom: 32px;
+.testimonial-body {
+  font-size: 18px;
+  color: #3E2723;
+  line-height: 1.8;
+  margin: 0;
 }
 
-/* Read More button – matches your other buttons */
-.read-more-btn {
-  background-color: #2c1f14;
-  color: white;
+/* ── BUTTON ── */
+.service-btn {
+  display: inline-block;
+  background-color: #3E2723;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 14px 34px;
-  font-family: 'Georgia', serif;
-  font-size: 15px;
-  font-weight: 700;
+  padding: 15px 29px;
+  font-size: 17px;
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  width: fit-content;
 }
 
-.read-more-btn:hover {
-  background-color: #3e2b1c;
+.service-btn:hover {
+  background-color: #5d3a33;
+}
+
+/* ── MEET THE PACK ── */
+.team-full-img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
 }

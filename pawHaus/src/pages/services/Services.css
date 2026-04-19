@@ -1,0 +1,296 @@
+/* ── PAGE ── */
+.services-page {
+  min-height: 100vh;
+  background-color: #b6cfe4 !important;
+  font-family: "Georgia", serif;
+  overflow: visible;
+}
+
+/* ── HERO ── */
+.services-page .hero {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.services-page .hero-left {
+  padding: 0 0 0 70px;
+  flex: 0 0 50%;
+  z-index: 5;
+}
+
+.services-page .hero-title {
+  color: #FFF1B5;
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 0;
+  margin-left: -300px;
+  padding-right: 500px;
+}
+
+.services-page .hero-right {
+  flex: 1;
+  position: relative;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+}
+
+.services-page .dog-img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center top;
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+}
+
+/* ── SECTION ── */
+.service-section {
+  background-color: #fff6ea;
+  padding: 60px 80px;
+}
+
+.service-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.service-section-title {
+  font-family: "Georgia", serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: #3E2723;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: 2px;
+  margin: 0 0 32px 0;
+}
+
+.paw-decoration {
+  font-size: 120px;
+  opacity: 0.2;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── MAIN CARD ── */
+.main-card {
+  display: flex;
+  gap: 0;
+  background: #ffffff;
+  border: 1px solid #3E2723;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  align-items: stretch;
+  min-height: 280px;
+}
+
+.main-card-text {
+  flex: 1;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-card-subtitle {
+  font-family: "Georgia", serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #3E2723;
+  margin: 0 0 16px 0;
+}
+
+.main-card-body {
+  font-size: 15px;
+  color: #3E2723;
+  line-height: 1.75;
+  margin: 0 0 24px 0;
+}
+
+.main-card-img-wrap {
+  flex: 0 0 300px;
+  overflow: hidden;
+}
+
+.main-card-dog {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── BUTTONS ── */
+.service-btn {
+  display: inline-block;
+  background-color: #3E2723;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-family: "Georgia", serif;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.service-btn:hover {
+  background-color: #5d3a33;
+}
+
+/* ── OPTIONS LABEL ── */
+.options-label {
+  font-family: "Georgia", serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3E2723;
+  margin: 0 0 20px 0;
+}
+
+/* ── OPTIONS GRID ── */
+.options-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.options-grid.two-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.options-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* ── OPTION CARD ── */
+.option-card {
+  background: #ffffff;
+  border: 1px solid #3E2723;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-card.text-only {
+  padding: 30px;
+}
+
+.option-card.img-only {
+  padding: 0;
+  min-height: 220px;
+}
+
+.option-card-content {
+  padding: 30px 30px 20px 30px;
+}
+
+.option-title {
+  font-family: "Georgia", serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #3E2723;
+  margin: 0 0 12px 0;
+}
+
+.option-body {
+  font-size: 15px;
+  color: #3E2723;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── OPTION IMAGE ── */
+.option-img-wrap {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.option-dog {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── GROOMING LAYOUT ── */
+.grooming-grid {
+  align-items: stretch;
+}
+
+.option-card.grooming-img-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.grooming-tall-dog {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.grooming-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grooming-text-col .option-card {
+  flex: 1;
+}
+
+/* ── TRAINING LAYOUT ── */
+.training-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.training-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.training-text-col .option-card {
+  flex: 1;
+}
+
+.option-card.training-img-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid #3E2723;
+}
+
+.training-tall-dog {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
