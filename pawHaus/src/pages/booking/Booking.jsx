@@ -2,12 +2,21 @@ import React, { useState } from "react";
 import "./Booking.css";
 import emailjs from '@emailjs/browser';
 
-const dates = [
-  { date: "05/04", day: "Saturday" },
-  { date: "06/04", day: "Sunday" },
-  { date: "07/04", day: "Monday" },
-  { date: "08/04", day: "Tuesday" },
-];
+const formatDateBox = (date) => ({
+  date: date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+  }),
+  day: date.toLocaleDateString("en-US", {
+    weekday: "long",
+  }),
+});
+
+const dates = Array.from({ length: 4 }, (_, index) => {
+  const date = new Date();
+  date.setDate(date.getDate() + index);
+  return formatDateBox(date);
+});
 
 const slots = [
   { time: "10:00AM", booked: false },
@@ -40,7 +49,7 @@ export default function Booking() {
     serviceType: "",
     notes: "",
   });
-  const [selectedDate, setSelectedDate] = useState("07/04");
+  const [selectedDate, setSelectedDate] = useState(dates[0].date);
   const [selectedSlot, setSelectedSlot] = useState("01:00PM");
   const [showOtherDate, setShowOtherDate] = useState(false);
   const [otherDate, setOtherDate] = useState("");
