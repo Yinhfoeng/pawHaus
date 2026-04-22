@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Copyright from "../../components/Copyright/Copyright";
-import NavBar_About from "../../components/NavBar/Navbar_About";
 import teamImg from "../../assets/team.png";
 import "./About.css";
 
 export default function About() {
   return (
     <div className="about-page">
-      <NavBar_About />
-
       {/* HERO */}
       <section className="about-hero">
         <h1 className="about-hero-title">ABOUT US</h1>
@@ -97,7 +93,7 @@ export default function About() {
         <img src={teamImg} alt="Meet the pack" className="team-full-img" />
       </section>
 
-      <Copyright />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import NavBar_Shop from "../../components/NavBar/Navbar_Shop";
-import Copyright from "../../components/Copyright/Copyright";
 import "./Checkout.css";
 
 export default function Checkout({ cart = [] }) {
@@ -31,12 +29,10 @@ export default function Checkout({ cart = [] }) {
 
   return (
     <div className="checkout-page">
-      <NavBar_Shop />
-
       <div className="checkout-content">
-        <button className="back-btn" onClick={() => navigate(-1)}>
+        {/* <button className="back-btn" onClick={() => navigate(-1)}>
           ← Back
-        </button>
+        </button> */}
         <h1 className="checkout-title">CHECKOUT</h1>
 
         <div className="checkout-body">
@@ -191,7 +187,7 @@ export default function Checkout({ cart = [] }) {
 
             {/* Pay Now */}
             <button className="pay-btn" onClick={() => alert("Order placed!")}>
-              PAY NOW
+              Pay Now
             </button>
           </div>
 
@@ -241,7 +237,7 @@ export default function Checkout({ cart = [] }) {
           </div>
         </div>
       </div>
-      <Copyright />
+      {/* <Footer /> */}
     </div>
   );
 }

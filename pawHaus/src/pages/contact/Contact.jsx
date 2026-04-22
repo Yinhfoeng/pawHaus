@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import NavBar_Booking from "../../components/NavBar/Navbar_Booking";
-import Copyright from "../../components/Copyright/Copyright";
 import "./Contact.css";
 import facebook from "../../assets/facebook.png";
 import instagram from "../../assets/instagram.png";
@@ -20,8 +18,6 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
-      <NavBar_Booking />
-
       <div className="contact-content">
         <h1 className="contact-title">CONTACT US</h1>
 
@@ -118,7 +114,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Copyright />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Copyright from "../../components/Copyright/Copyright";
 import dog from "../../assets/dog.png";
-import fresh from "../../assets/13.png";
-import pink from "../../assets/12.png";
-import collar from "../../assets/11.png";
 import testimonialDog from "../../assets/2.png";
 import locationImg from "../../assets/location.png";
 import facebook from "../../assets/facebook.png";
 import telephone from "../../assets/telephone.png";
 import instagram from "../../assets/instagram.png";
 import "./Home.css";
-import NavBar_Home from "../../components/NavBar/Navbar_Home";
+import { products } from "../../data/products";
 
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState("SHOP ALL");
+
+  const filtered =
+    activeFilter === "SHOP ALL"
+      ? products
+      : products.filter((p) => p.category === activeFilter);
+
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [emailError, setEmailError] = useState(""); // ← missing this line
@@ -29,8 +32,6 @@ export default function Home() {
   };
   return (
     <div className="home-page">
-      {/* NAVBAR */}
-      <NavBar_Home />
 
       {/* HERO */}
       <div className="hero">
@@ -42,10 +43,10 @@ export default function Home() {
             on.
           </p>
           <div className="btn-group">
-            <Link to="/booking" className="btn-primary">
+            <Link to="/booking" className="btn btn-primary">
               Book Now
             </Link>
-            <button className="btn-secondary">View Services</button>
+            <Link to="/services" className="btn btn-secondary">View Services</Link>
           </div>
         </div>
 
@@ -70,12 +71,14 @@ export default function Home() {
             consistency. Your pet stays in a clean, comfort-focused environment
             built for routine and well-being.
           </p>
-          <button className="who-btn">Learn More</button>
+          <Link to="/about" className="btn btn-primary">
+            Learn More
+          </Link>
         </div>
       </div>
 
       {/* BESTSELLERS SECTION – UPDATED */}
-      <div className="bestsellers">
+      {/* <div className="bestsellers">
         <div className="bestsellers-header">
           <h2 className="bestsellers-title">BESTSELLERS</h2>
           <Link to="/shop" className="see-all">
@@ -84,52 +87,88 @@ export default function Home() {
         </div>
 
         <div className="products-grid">
-{/* Card 1 */}
-<Link to="/shop" state={{ productId: 1 }} className="product-card" style={{ textDecoration: "none" }}>
-  <p className="product-category">TREAT</p>
-  <div className="product-img-wrapper">
-    <img src={fresh} alt="Fresh Kisses" className="product-img" />
-  </div>
-  <div className="product-footer">
-    <div>
-      <p className="product-name">FRESH KISSES</p>
-      <p className="product-desc">Healthy. Tasty. Rewarding.</p>
-    </div>
-    <p className="product-price">$16.00</p>
-  </div>
-</Link>
+          
+          <Link to="/shop" state={{ productId: 1 }} className="product-card" style={{ textDecoration: "none" }}>
+            <p className="product-category">TREAT</p>
+            <div className="product-img-wrapper">
+              <img src={fresh} alt="Fresh Kisses" className="product-img" />
+            </div>
+            <div className="product-footer">
+              <div>
+                <p className="product-name">FRESH KISSES</p>
+                <p className="product-desc">Healthy. Tasty. Rewarding.</p>
+              </div>
+              <p className="product-price">$16.00</p>
+            </div>
+          </Link>
 
-{/* Card 2 */}
-<Link to="/shop" state={{ productId: 2 }} className="product-card" style={{ textDecoration: "none" }}>
-  <p className="product-category">TOY</p>
-  <div className="product-img-wrapper">
-    <img src={pink} alt="Pink Toy" className="product-img" />
-  </div>
-  <div className="product-footer">
-    <div>
-      <p className="product-name">PINK</p>
-      <p className="product-desc">Playtime made better.</p>
-    </div>
-    <p className="product-price">$25.00</p>
-  </div>
-</Link>
+          <Link to="/shop" state={{ productId: 2 }} className="product-card" style={{ textDecoration: "none" }}>
+            <p className="product-category">TOY</p>
+            <div className="product-img-wrapper">
+              <img src={pink} alt="Pink Toy" className="product-img" />
+            </div>
+            <div className="product-footer">
+              <div>
+                <p className="product-name">PINK</p>
+                <p className="product-desc">Playtime made better.</p>
+              </div>
+              <p className="product-price">$25.00</p>
+            </div>
+          </Link>
 
-{/* Card 3 */}
-<Link to="/shop" state={{ productId: 3 }} className="product-card" style={{ textDecoration: "none" }}>
-  <p className="product-category">ACCESSORY</p>
-  <div className="product-img-wrapper">
-    <img src={collar} alt="Leather Collar" className="product-img" />
-  </div>
-  <div className="product-footer">
-    <div>
-      <p className="product-name">LEATHER COLLAR</p>
-      <p className="product-desc">Real leather, made personal.</p>
-    </div>
-    <p className="product-price">$50.00</p>
-  </div>
-</Link>
+          <Link to="/shop" state={{ productId: 3 }} className="product-card" style={{ textDecoration: "none" }}>
+            <p className="product-category">ACCESSORY</p>
+            <div className="product-img-wrapper">
+              <img src={collar} alt="Leather Collar" className="product-img" />
+            </div>
+            <div className="product-footer">
+              <div>
+                <p className="product-name">LEATHER COLLAR</p>
+                <p className="product-desc">Real leather, made personal.</p>
+              </div>
+              <p className="product-price">$50.00</p>
+            </div>
+          </Link>
         </div>
-      </div>
+      </div> */}
+
+      <div className="bestsellers">
+  <div className="bestsellers-header">
+    <h2 className="bestsellers-title">BESTSELLERS</h2>
+    <Link to="/shop" className="see-all">
+      SEE ALL
+    </Link>
+  </div>
+
+  <div className="products-grid">
+    {products.slice(0, 3).map((product) => (
+      <Link
+        to={`/product/${product.id}`}
+        className="product-card"
+        key={product.id}
+        style={{ textDecoration: "none" }}
+      >
+        <p className="product-category">{product.category}</p>
+
+        <div className="product-img-wrapper">
+          <img
+            src={product.img}
+            alt={product.name}
+            className="product-img"
+          />
+        </div>
+
+        <div className="product-footer">
+          <div>
+            <p className="product-name">{product.name}</p>
+            <p className="product-desc">{product.desc}</p>
+          </div>
+          <p className="product-price">{product.price}</p>
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
 
       {/* TESTIMONIAL SECTION – UPDATED (button now outside + below the box) */}
       <div className="testimonial">
@@ -157,7 +196,7 @@ export default function Home() {
             </div>
 
             {/* Button is now OUTSIDE the white box and below it */}
-            <button className="read-more-btn">Read More</button>
+            <button className="btn btn-primary">Read More</button>
           </div>
         </div>
       </div>
@@ -166,7 +205,7 @@ export default function Home() {
       <div className="questions">
         <div className="questions-content">
           <h2 className="questions-title">HAVE ANY QUESTIONS?</h2>
-          <Link to="/contact" className="questions-btn">
+          <Link to="/contact" className="btn btn-secondary">
             Contact Us
           </Link>
         </div>
@@ -174,9 +213,9 @@ export default function Home() {
       </div>
 
       {/* FOOTER SECTION */}
-      <div className="footer">
+      <div className="home-footer-section">
         {/* LEFT */}
-        <div className="footer-left">
+        <div className="home-footer-left">
           <a
             href="https://maps.app.goo.gl/idKbq7xAYURuq6vq8"
             target="_blank"
@@ -197,7 +236,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT */}
-        <div className="footer-right">
+        <div className="home-footer-right">
           {/* Newsletter */}
           <div className="newsletter">
             <h2 className="newsletter-title">
@@ -225,7 +264,7 @@ export default function Home() {
 
             {emailError && <p className="error-msg">{emailError}</p>}
 
-            <button className="subscribe-btn" onClick={handleSubscribe}>
+            <button className="btn btn-primary" onClick={handleSubscribe}>
               Subscribe
             </button>
 
@@ -260,9 +299,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* COPYRIGHT */}
-      <Copyright />
     </div>
   );
 }

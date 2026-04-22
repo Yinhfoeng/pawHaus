@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import NavBar_Booking from "../../components/NavBar/Navbar_Booking";
-import Copyright from "../../components/Copyright/Copyright";
 import "./Booking.css";
 
 const dates = [
@@ -30,8 +28,16 @@ const services = ["Grooming", "Daycare", "Boarding", "Training"];
 
 export default function Booking() {
   const [form, setForm] = useState({
-    firstName: "", lastName: "", email: "", phone: "",
-    dogName: "", breed: "", age: "", size: "", serviceType: "", notes: ""
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    dogName: "",
+    breed: "",
+    age: "",
+    size: "",
+    serviceType: "",
+    notes: "",
   });
   const [selectedDate, setSelectedDate] = useState("07/04");
   const [selectedSlot, setSelectedSlot] = useState("01:00PM");
@@ -48,43 +54,110 @@ export default function Booking() {
 
   return (
     <div className="booking-page">
-      <NavBar_Booking />
-
       <div className="booking-content">
         <h1 className="booking-title">MANAGE BOOKING</h1>
 
         <div className="booking-body">
-
           {/* LEFT */}
           <div className="booking-left">
-
             {/* Owner Info */}
             <h2 className="section-label-1">Owner Information</h2>
             <div className="input-row">
-              <input className="b-input" type="text" name="firstName" placeholder="First Name" value={form.firstName} onChange={handleChange} />
-              <input className="b-input" type="text" name="lastName" placeholder="Last Name" value={form.lastName} onChange={handleChange} />
+              <input
+                className="b-input"
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={form.firstName}
+                onChange={handleChange}
+              />
+              <input
+                className="b-input"
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={form.lastName}
+                onChange={handleChange}
+              />
             </div>
             <div className="input-row">
-              <input className="b-input" type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} />
-              <input className="b-input" type="text" name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} />
+              <input
+                className="b-input"
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+              />
+              <input
+                className="b-input"
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                value={form.phone}
+                onChange={handleChange}
+              />
             </div>
 
             {/* Pet Info */}
             <h2 className="section-label-2">Pet Information</h2>
             <div className="input-row">
-              <input className="b-input" type="text" name="dogName" placeholder="Dog Name" value={form.dogName} onChange={handleChange} />
-              <input className="b-input" type="text" name="breed" placeholder="Breed" value={form.breed} onChange={handleChange} />
+              <input
+                className="b-input"
+                type="text"
+                name="dogName"
+                placeholder="Dog Name"
+                value={form.dogName}
+                onChange={handleChange}
+              />
+              <input
+                className="b-input"
+                type="text"
+                name="breed"
+                placeholder="Breed"
+                value={form.breed}
+                onChange={handleChange}
+              />
             </div>
             <div className="input-row">
-              <input className="b-input" type="text" name="age" placeholder="Age" value={form.age} onChange={handleChange} />
-              <select className="b-input b-select" name="size" value={form.size} onChange={handleChange}>
-                <option value="" disabled>Size</option>
-                {sizes.map(s => <option key={s} value={s}>{s}</option>)}
+              <input
+                className="b-input age"
+                type="text"
+                name="age"
+                placeholder="Age"
+                value={form.age}
+                onChange={handleChange}
+              />
+              <select
+                className="b-input b-select"
+                name="size"
+                value={form.size}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Size
+                </option>
+                {sizes.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
               </select>
             </div>
-            <select className="b-input b-select b-full" name="serviceType" value={form.serviceType} onChange={handleChange}>
-              <option value="" disabled>Service Type</option>
-              {services.map(s => <option key={s} value={s}>{s}</option>)}
+            <select
+              className="b-input b-select b-full"
+              name="serviceType"
+              value={form.serviceType}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                Service Type
+              </option>
+              {services.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
             </select>
 
             {/* Notes */}
@@ -98,13 +171,13 @@ export default function Booking() {
             />
 
             {/* Book Now */}
-            <button className="book-btn" onClick={handleSubmit}>Book Now</button>
-
+            <button className="book-btn" onClick={handleSubmit}>
+              Book Now
+            </button>
           </div>
 
           {/* RIGHT */}
           <div className="booking-right">
-
             {/* Date */}
             <h2 className="section-label-4">Choose Your Visit Date</h2>
             <div className="date-grid">
@@ -112,7 +185,10 @@ export default function Booking() {
                 <button
                   key={d.date}
                   className={`date-btn ${selectedDate === d.date ? "date-active" : ""}`}
-                  onClick={() => { setSelectedDate(d.date); setShowOtherDate(false); }}
+                  onClick={() => {
+                    setSelectedDate(d.date);
+                    setShowOtherDate(false);
+                  }}
                 >
                   <span className="date-num">{d.date}</span>
                   <span className="date-day">{d.day}</span>
@@ -120,7 +196,10 @@ export default function Booking() {
               ))}
               <button
                 className={`date-btn other-date-btn ${showOtherDate ? "date-active" : ""}`}
-                onClick={() => { setShowOtherDate(true); setSelectedDate(""); }}
+                onClick={() => {
+                  setShowOtherDate(true);
+                  setSelectedDate("");
+                }}
               >
                 <span className="calendar-icon">📅</span>
                 <span className="date-day">Other date</span>
@@ -153,12 +232,11 @@ export default function Booking() {
                 </button>
               ))}
             </div>
-
           </div>
         </div>
       </div>
 
-      <Copyright />
+      {/* <Footer /> */}
     </div>
   );
 }
