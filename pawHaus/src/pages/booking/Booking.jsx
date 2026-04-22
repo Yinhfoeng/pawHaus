@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Booking.css";
+import emailjs from '@emailjs/browser';
 
 const dates = [
   { date: "05/04", day: "Saturday" },
@@ -48,10 +49,28 @@ export default function Booking() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    alert("Booking confirmed!");
-  };
-
+ const handleSubmit = () => {
+emailjs.send(
+  "service_6e89y5h",
+  "template_qt34qp7",
+  {
+    email: form.email,
+    firstName: form.firstName,
+    dogName: form.dogName,
+    serviceType: form.serviceType,
+    date: selectedDate || otherDate,
+    time: selectedSlot,
+  },
+  "SE3twn0KWnyXp_cRl"
+)
+  .then(() => {
+    alert("Thank you for your booking! An email confirmation has been sent to you.");
+  })
+  .catch((error) => {
+    console.error(error);
+    alert("Failed to send email confirmation. Please try again.");
+  });
+};
   return (
     <div className="booking-page">
       <div className="booking-content">
