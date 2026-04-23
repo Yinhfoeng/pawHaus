@@ -213,3 +213,94 @@
   border-color: #e0d5c8;
   cursor: not-allowed;
 }
+  
+
+  .b-textarea {
+    height: 150px;
+  }
+
+  .book-btn {
+    font-size: 13px;
+    padding: 12px;
+    margin-top: 6px;
+  }
+
+  .date-grid {
+    gap: 8px;
+  }
+
+  .date-btn {
+    padding: 8px 10px;
+    min-width: 85px;
+    font-size: 12px;
+  }
+
+  .date-num {
+    font-size: 12px;
+  }
+
+  .slots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .slot-btn {
+    font-size: 11px;
+    padding: 8px 4px;
+  }
+/* ── MOBILE (430px) ── */
+@media (max-width: 430px) {
+  .booking-content {
+    padding: 70px 20px 30px 20px;
+  }
+
+  .booking-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .booking-body {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .booking-left { flex: 1; }
+  .booking-right { flex: 1; }
+
+  .section-label-1, .section-label-2, .section-label-3,
+  .section-label-4, .section-label-5 {
+    font-size: 15px;
+  }
+
+  .section-label-2, .section-label-3 { margin: 14px 0 4px 0; }
+  .section-label-5 { margin-top: 20px; margin-bottom: 12px; }
+
+  .input-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .b-input { font-size: 14px; padding: 12px 14px; }
+  .b-textarea { height: 150px; font-size: 14px; }
+  .book-btn { font-size: 14px; padding: 14px; }
+
+  .date-grid { gap: 8px; }
+
+  .date-btn {
+    min-width: calc(50% - 4px);
+    padding: 10px 12px;
+  }
+
+  .date-num { font-size: 14px; }
+  .date-day { font-size: 11px; }
+
+  .slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .slot-btn {
+    font-size: 11px;
+    padding: 9px 4px;
+  }
+}

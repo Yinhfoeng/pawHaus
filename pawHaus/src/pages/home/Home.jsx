@@ -7,7 +7,7 @@ import facebook from "../../assets/facebook.png";
 import telephone from "../../assets/telephone.png";
 import instagram from "../../assets/instagram.png";
 import "./Home.css";
-import { products } from "../../data/products";
+import { products } from "../../Data/products";
 
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState("SHOP ALL");
@@ -77,61 +77,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* BESTSELLERS SECTION – UPDATED */}
-      {/* <div className="bestsellers">
-        <div className="bestsellers-header">
-          <h2 className="bestsellers-title">BESTSELLERS</h2>
-          <Link to="/shop" className="see-all">
-            SEE ALL
-          </Link>
-        </div>
-
-        <div className="products-grid">
-          
-          <Link to="/shop" state={{ productId: 1 }} className="product-card" style={{ textDecoration: "none" }}>
-            <p className="product-category">TREAT</p>
-            <div className="product-img-wrapper">
-              <img src={fresh} alt="Fresh Kisses" className="product-img" />
-            </div>
-            <div className="product-footer">
-              <div>
-                <p className="product-name">FRESH KISSES</p>
-                <p className="product-desc">Healthy. Tasty. Rewarding.</p>
-              </div>
-              <p className="product-price">$16.00</p>
-            </div>
-          </Link>
-
-          <Link to="/shop" state={{ productId: 2 }} className="product-card" style={{ textDecoration: "none" }}>
-            <p className="product-category">TOY</p>
-            <div className="product-img-wrapper">
-              <img src={pink} alt="Pink Toy" className="product-img" />
-            </div>
-            <div className="product-footer">
-              <div>
-                <p className="product-name">PINK</p>
-                <p className="product-desc">Playtime made better.</p>
-              </div>
-              <p className="product-price">$25.00</p>
-            </div>
-          </Link>
-
-          <Link to="/shop" state={{ productId: 3 }} className="product-card" style={{ textDecoration: "none" }}>
-            <p className="product-category">ACCESSORY</p>
-            <div className="product-img-wrapper">
-              <img src={collar} alt="Leather Collar" className="product-img" />
-            </div>
-            <div className="product-footer">
-              <div>
-                <p className="product-name">LEATHER COLLAR</p>
-                <p className="product-desc">Real leather, made personal.</p>
-              </div>
-              <p className="product-price">$50.00</p>
-            </div>
-          </Link>
-        </div>
-      </div> */}
-
       <div className="bestsellers">
   <div className="bestsellers-header">
     <h2 className="bestsellers-title">BESTSELLERS</h2>
@@ -196,7 +141,7 @@ export default function Home() {
             </div>
 
             {/* Button is now OUTSIDE the white box and below it */}
-            <button className="btn btn-primary">Read More</button>
+            <Link to="/about#testimonial" className="btn btn-primary">Read More</Link>
           </div>
         </div>
       </div>

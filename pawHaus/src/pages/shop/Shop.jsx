@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { products, filters } from "../../data/products";
+import { products, filters } from "../../Data/products";
 import "./Shop.css";
 
 export default function Shop() {

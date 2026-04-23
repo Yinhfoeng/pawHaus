@@ -251,4 +251,54 @@
 .order-total-row {
   font-size: 15px;
   font-weight: 600;
+} 
+/* ── MOBILE (430px) ── */
+@media (max-width: 430px) {
+  .checkout-content {
+    padding: 70px 20px 30px 20px;
+  }
+
+  .checkout-title {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  .checkout-body {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .checkout-left { flex: 1; }
+  .checkout-right { flex: 1; }
+
+  .co-section-label { font-size: 15px; margin-bottom: 4px; }
+
+  .co-input-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .co-input {
+    font-size: 13px;
+    padding: 11px 13px;
+  }
+
+  .delivery-option, .payment-option {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .delivery-name, .payment-name { font-size: 13px; }
+  .delivery-desc { font-size: 11px; }
+  .delivery-price { font-size: 13px; }
+
+  .pay-btn { font-size: 14px; padding: 14px; }
+
+  .order-box { padding: 18px; gap: 14px; margin-top: 0; }
+  .order-title { font-size: 16px; }
+
+  .order-item-img { width: 60px; height: 60px; }
+  .order-item-name { font-size: 12px; }
+  .order-item-price { font-size: 13px; }
+  .order-row { font-size: 13px; }
 }

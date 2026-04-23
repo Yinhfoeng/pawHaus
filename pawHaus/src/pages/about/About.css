@@ -2,7 +2,7 @@
   min-height: 100vh;
   background-color: #fff6ea;
   font-family: "Inter", sans-serif;
-  padding: 105px 60px 15px 80px;
+  padding: 105px 80px 15px 80px;
   box-sizing: border-box;
 }
 
@@ -159,40 +159,64 @@
   border-radius: 16px;
 }
 
-@media (max-width: 992px) {
+/* ── MOBILE (430px) ── */
+@media (max-width: 430px) {
   .about-page {
-    padding: 110px 32px 32px;
+    padding: 70px 20px 20px 20px;
   }
 
-  .mission-grid,
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
+  .about-hero-title { font-size: 32px; }
 
-  .about-hero-title {
-    font-size: 42px;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-page {
-    padding: 100px 20px 28px;
-  }
-
-  .about-hero-title {
-    font-size: 34px;
-  }
+  .about-section { padding-top: 28px; }
 
   .about-section-label {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 14px;
   }
 
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-body { font-size: 14px; }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .step-card {
+    padding: 20px;
+    margin-bottom: 0;
+  }
+
+  .step-number {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .step-title { font-size: 15px; }
+  .step-body { font-size: 13px; }
+
   .testimonial-card {
-    padding: 24px 20px;
+    padding: 20px;
+    margin-bottom: 16px;
   }
 
   .testimonial-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
+  }
+
+  .testimonial-name { font-size: 17px; }
+  .testimonial-stars { font-size: 17px; }
+  .testimonial-body { font-size: 13px; }
+
+  .service-btn {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 14px;
   }
 }

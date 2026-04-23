@@ -27,7 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/booking" element={<Booking />} />
-            <Route path="/shop" element={<Shop cart={cart} setCart={setCart} />} />
+            <Route path="/shop" element={<Shop />} />
             <Route
               path="/product/:id"
               element={<Product cart={cart} setCart={setCart} />}
@@ -38,7 +38,7 @@ function App() {
           </Routes>
         </main>
 
-        <Footer /> 
+        <Footer />
       </div>
     </Router>
   );

@@ -1,9 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import teamImg from "../../assets/team.png";
 import "./About.css";
 
 export default function About() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#testimonial") {
+      const el = document.getElementById("testimonial");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
   return (
     <div className="about-page">
       {/* HERO */}
@@ -18,14 +27,15 @@ export default function About() {
           <p className="about-body">
             To provide safe, structured, and reliable care where every pet feels
             secure, comfortable, and well looked after. We focus on consistency,
-            proper routines, and attentive handling so owners feel confident every
-            time they trust us with their pets.
+            proper routines, and attentive handling so owners feel confident
+            every time they trust us with their pets.
           </p>
           <p className="about-body">
-            We prioritize safety in every service. We operate with discipline and
-            consistency, not guesswork. Our team is trained, attentive, and
+            We prioritize safety in every service. We operate with discipline
+            and consistency, not guesswork. Our team is trained, attentive, and
             accountable. We maintain clean, calm environments that support each
-            pet's well-being. We treat every pet with care, respect, and patience.
+            pet's well-being. We treat every pet with care, respect, and
+            patience.
           </p>
         </div>
       </section>
@@ -57,15 +67,15 @@ export default function About() {
             <h3 className="step-title">Pick Up Your Pet</h3>
             <p className="step-body">
               Your pet leaves clean, calm, and well cared for. You receive a
-              consistent experience every time, with your pet returning comfortable
-              and ready to go home.
+              consistent experience every time, with your pet returning
+              comfortable and ready to go home.
             </p>
           </div>
         </div>
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="about-section">
+      <section className="about-section" id="testimonial">
         <h2 className="about-section-label">TESTIMONIAL</h2>
         <div className="testimonial-card">
           <div className="testimonial-header">
@@ -75,11 +85,11 @@ export default function About() {
           <p className="testimonial-body">
             I've tried a few places before, but Paw Haus stands out. The team is
             organized, responsive, and clearly experienced. I booked daycare and
-            grooming, and both were handled smoothly. My dog came back clean, calm,
-            and well taken care of, which says a lot because she's usually anxious
-            in new environments. I also like that everything runs on a clear
-            routine, so I know what to expect each time. It feels reliable, and
-            that's the main reason I keep coming back.
+            grooming, and both were handled smoothly. My dog came back clean,
+            calm, and well taken care of, which says a lot because she's usually
+            anxious in new environments. I also like that everything runs on a
+            clear routine, so I know what to expect each time. It feels
+            reliable, and that's the main reason I keep coming back.
           </p>
         </div>
         <Link to="/booking" className="service-btn">

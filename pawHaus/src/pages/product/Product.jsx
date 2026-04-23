@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { products } from "../../data/products";
 import "./Product.css";
@@ -11,6 +11,20 @@ export default function Product({ cart, setCart }) {
   const [openSection, setOpenSection] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [bagOpen, setBagOpen] = useState(false);
+
+  useEffect(() => {
+    if (bagOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("bag-open");
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("bag-open");
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("bag-open");
+    };
+  }, [bagOpen]);
 
   if (!product) {
     return (

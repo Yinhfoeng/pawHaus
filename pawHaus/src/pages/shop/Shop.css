@@ -7,7 +7,7 @@
 }
 
 .shop-content {
-  padding: 60px 60px 10px 80px;
+  padding: 60px 80px 10px 80px;
   flex: 1;  
 } 
 
@@ -127,109 +127,28 @@
   white-space: nowrap;
 }
 
-@media (max-width: 1200px) {
+/* ── MOBILE RESPONSIVE (iPhone 14 Pro Max) ── */
+@media screen and (max-width: 430px) {
   .shop-content {
-    padding: 50px 40px 10px;
+    padding: 100px 20px 20px 20px;
   }
 
   .catalog-title {
-    font-size: 44px;
-  }
-
-  .products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .shop-content {
-    padding: 36px 20px 10px;
-  }
-
-  .catalog-title {
-    font-size: 34px;
-    margin-bottom: 20px;
+    font-size: 36px;
   }
 
   .filter-btns {
-    gap: 10px;
-    margin-bottom: 28px;
+    overflow-x: auto; /* Allow buttons to scroll horizontally */
+    padding-bottom: 10px;
+    white-space: nowrap;
   }
 
   .filter-btn {
-    min-width: calc(50% - 5px);
-    height: 42px;
-    font-size: 14px;
-    padding: 10px 12px;
+    flex: 0 0 auto;
   }
 
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stacked cards */
     gap: 20px;
-  }
-
-  .product-card {
-    padding: 16px;
-  }
-
-  .product-category {
-    font-size: 15px;
-  }
-
-  .product-img-wrapper {
-    height: 220px;
-  }
-
-  .product-name {
-    font-size: 13px;
-  }
-
-  .product-desc {
-    font-size: 12px;
-  }
-
-  .product-price {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .shop-content {
-    padding: 28px 16px 8px;
-  }
-
-  .catalog-title {
-    font-size: 28px;
-  }
-
-.filter-btns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .filter-btn {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .product-img-wrapper {
-    height: 190px;
-  }
-
-  .product-img {
-    width: 125%;
-    height: 110%;
-  }
-
-  .product-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .product-price {
-    white-space: normal;
   }
 }
