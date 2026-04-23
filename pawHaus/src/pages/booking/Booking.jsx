@@ -6,14 +6,13 @@ import emailjs from '@emailjs/browser';
 const GOOGLE_API_KEY     = "AIzaSyDAnOugt5K5pHWaa5P1wHDt8-gI07R3GpY"; 
 const GOOGLE_CALENDAR_ID = "13a4341f2ab2915420cc006ea80d9be1aa113d91a044ed7cb8403c802d549e40@group.calendar.google.com"; 
 
-// ── All possible time slots (fixed — same as before) ─────────────────────────
+
 const ALL_SLOTS = [
   "10:00AM", "10:30AM", "11:00AM", "11:30AM",
   "12:00PM", "12:30PM", "01:00PM", "01:30PM",
   "02:00PM", "02:30PM", "03:00PM", "03:30PM",
 ];
 
-// Convert "10:30AM" → "10:30" (24h) for API comparison
 function slotTo24h(slot) {
   const [timePart, period] = [slot.slice(0, 5), slot.slice(5)];
   let [h, m] = timePart.split(":").map(Number);
@@ -22,20 +21,18 @@ function slotTo24h(slot) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
 }
 
-// Check if a slot overlaps with any busy interval from Google Calendar API
 function isSlotBusy(slot, dateStr, busyIntervals) {
   const time24    = slotTo24h(slot);
-  const slotStart = new Date(`${dateStr}T${time24}:00+07:00`); // ← force UTC+7
+  const slotStart = new Date(`${dateStr}T${time24}:00+07:00`);
   const slotEnd   = new Date(slotStart.getTime() + 30 * 60 * 1000);
 
   return busyIntervals.some(({ start, end }) => slotStart < end && slotEnd > start);
 }
 
-// ── Date helpers (same logic as your original) ────────────────────────────────
 const formatDateBox = (date) => ({
   date: date.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit" }),
   day:  date.toLocaleDateString("en-US", { weekday: "long" }),
-  iso:  date.toISOString().split("T")[0], // "YYYY-MM-DD" — needed for API
+  iso:  date.toISOString().split("T")[0],
 });
 
 const dates = Array.from({ length: 4 }, (_, i) => {
@@ -61,12 +58,10 @@ export default function Booking() {
   const [otherDate,     setOtherDate]     = useState("");
 
   // ── Google Calendar API state ─────────────────────────────────────────────
-  const [busyIntervals, setBusyIntervals] = useState([]); // raw busy data from API
+  const [busyIntervals, setBusyIntervals] = useState([]); 
   const [loadingSlots,  setLoadingSlots]  = useState(false);
   const [slotsError,    setSlotsError]    = useState(null);
 
-  // ── Fetch busy slots from Google Calendar freeBusy API ────────────────────
-  // Runs every time the selected date changes
   useEffect(() => {
     const dateIso = otherDate || selectedIso;
     if (!dateIso) return;
@@ -98,8 +93,6 @@ export default function Booking() {
         const data = await response.json();
 
         // ── Data transformation ──────────────────────────────────────────────
-        // Raw API: { calendars: { "cal_id": { busy: [{ start, end }, ...] } } }
-        // Transform: convert ISO strings → JS Date objects for easy comparison
         const rawBusy = data.calendars?.[GOOGLE_CALENDAR_ID]?.busy ?? [];
         const transformed = rawBusy.map((b) => ({
           start: new Date(b.start),
@@ -113,7 +106,7 @@ export default function Booking() {
         setBusyIntervals(transformed);
       } catch (err) {
         setSlotsError(err.message);
-        // Fallback: use mock busy slots so demo still looks realistic
+
         setBusyIntervals([
           { start: new Date(`${dateIso}T03:30:00Z`), end: new Date(`${dateIso}T04:00:00Z`) }, // 10:30AM
           { start: new Date(`${dateIso}T05:30:00Z`), end: new Date(`${dateIso}T06:00:00Z`) }, // 12:30PM
@@ -166,14 +159,14 @@ export default function Booking() {
     });
   };
 
-  // ── Build slots array dynamically from API data ────────────────────────────
+
   const dateIso = otherDate || selectedIso;
   const slots = ALL_SLOTS.map((time) => ({
     time,
     booked: isSlotBusy(time, dateIso, busyIntervals),
   }));
 
-  // ── Render ─────────────────────────────────────────────────────────────────
+
   return (
     <div className="booking-page">
       <div className="booking-content">
@@ -268,10 +261,9 @@ export default function Booking() {
               </div>
             )}
 
-            {/* Slots grid — same className structure as your original */}
             <div className="slots-grid">
               {loadingSlots
-                ? // Loading skeleton — same number of slots
+                ?
                   ALL_SLOTS.map((s) => (
                     <div key={s} className="slot-btn slot-skeleton" />
                   ))
