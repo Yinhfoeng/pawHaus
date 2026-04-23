@@ -77,12 +77,11 @@
   z-index: 1;
 }
 
-/* FIND and REPLACE */
 .main-card {
   position: relative;
   z-index: 2;
   display: flex;
-  width: 100%;        /* ← was 1328px, change to 100% */
+  width: 100%;    
   height: auto;
   min-height: 300px;
   margin-bottom: 40px;

@@ -102,8 +102,6 @@ export default function About() {
         <h2 className="about-section-label">MEET THE PACK</h2>
         <img src={teamImg} alt="Meet the pack" className="team-full-img" />
       </section>
-
-      {/* <Footer /> */}
     </div>
   );
 }

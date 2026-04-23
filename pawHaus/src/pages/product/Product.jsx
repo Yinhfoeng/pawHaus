@@ -298,8 +298,6 @@ export default function Product({ cart, setCart }) {
           </div>
         </div>
       )}
-
-      {/* <Footer /> */}
     </div>
   );
 }

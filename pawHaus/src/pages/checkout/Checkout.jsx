@@ -243,7 +243,6 @@ export default function Checkout({ cart = [] }) {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
