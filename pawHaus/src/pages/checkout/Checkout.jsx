@@ -30,9 +30,6 @@ export default function Checkout({ cart = [] }) {
   return (
     <div className="checkout-page">
       <div className="checkout-content">
-        {/* <button className="back-btn" onClick={() => navigate(-1)}>
-          ← Back
-        </button> */}
         <h1 className="checkout-title">CHECKOUT</h1>
 
         <div className="checkout-body">

@@ -19,7 +19,7 @@ export default function Home() {
 
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-  const [emailError, setEmailError] = useState(""); // ← missing this line
+  const [emailError, setEmailError] = useState("");
 
   const handleSubscribe = () => {
     if (email.trim() === "") {
@@ -115,12 +115,10 @@ export default function Home() {
   </div>
 </div>
 
-      {/* TESTIMONIAL SECTION – UPDATED (button now outside + below the box) */}
       <div className="testimonial">
         <h2 className="testimonial-title">TESTIMONIAL</h2>
 
         <div className="testimonial-content">
-          {/* LEFT COLUMN: box + button below it */}
           <div className="testimonial-left">
             <div className="testimonial-box">
               <div className="testimonial-header">
@@ -139,8 +137,6 @@ export default function Home() {
                 I keep coming back.
               </p>
             </div>
-
-            {/* Button is now OUTSIDE the white box and below it */}
             <Link to="/about#testimonial" className="btn btn-primary">Read More</Link>
           </div>
         </div>
