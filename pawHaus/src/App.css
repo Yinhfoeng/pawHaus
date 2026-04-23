@@ -2,8 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* Crucial for mobile to prevent accidental side-scrolling */
-  overflow-x: hidden; 
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -65,17 +64,14 @@ body {
   font-family: 'Lovelo', sans-serif;
 }
 
-/* ── MOBILE RESPONSIVE (iPhone 14 Pro Max: 430px) ── */
-@media screen and (max-width: 430px) {
-  /* Increase button size slightly for better tap targets on mobile if needed */
+@media screen and (max-width: 768px) {
   .btn {
-    height: 48px; /* Standard accessible touch target size */
+    height: 48px;
     font-size: 14px;
-    width: 100%; /* Often buttons look better full-width in mobile forms */
-    max-width: 280px; /* But don't let them get awkwardly wide */
+    width: 100%;
+    max-width: 280px;
   }
 
-  /* Prevent text from becoming microscopic */
   body {
     -webkit-text-size-adjust: 100%;
   }

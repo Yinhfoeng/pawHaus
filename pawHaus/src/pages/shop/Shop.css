@@ -127,18 +127,17 @@
   white-space: nowrap;
 }
 
-/* ── MOBILE RESPONSIVE (iPhone 14 Pro Max) ── */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 768px) {
   .shop-content {
-    padding: 100px 20px 20px 20px;
+    padding: 92px 20px 24px;
   }
 
   .catalog-title {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .filter-btns {
-    overflow-x: auto; /* Allow buttons to scroll horizontally */
+    overflow-x: auto;
     padding-bottom: 10px;
     white-space: nowrap;
   }
@@ -148,7 +147,11 @@
   }
 
   .products-grid {
-    grid-template-columns: 1fr; /* Stacked cards */
+    grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .product-img-wrapper {
+    height: 220px;
   }
 }

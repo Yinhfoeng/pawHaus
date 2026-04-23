@@ -251,15 +251,15 @@
 .order-total-row {
   font-size: 15px;
   font-weight: 600;
-} 
-/* ── MOBILE (430px) ── */
-@media (max-width: 430px) {
+}
+
+@media (max-width: 768px) {
   .checkout-content {
-    padding: 70px 20px 30px 20px;
+    padding: 92px 20px 30px;
   }
 
   .checkout-title {
-    font-size: 30px;
+    font-size: 34px;
     margin-bottom: 12px;
   }
 

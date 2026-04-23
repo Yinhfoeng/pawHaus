@@ -214,49 +214,13 @@
   cursor: not-allowed;
 }
 
-  
-
-  .b-textarea {
-    height: 150px;
-  }
-
-  .book-btn {
-    font-size: 13px;
-    padding: 12px;
-    margin-top: 6px;
-  }
-
-  .date-grid {
-    gap: 8px;
-  }
-
-  .date-btn {
-    padding: 8px 10px;
-    min-width: 85px;
-    font-size: 12px;
-  }
-
-  .date-num {
-    font-size: 12px;
-  }
-
-  .slots-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .slot-btn {
-    font-size: 11px;
-    padding: 8px 4px;
-  }
-/* ── MOBILE (430px) ── */
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   .booking-content {
-    padding: 70px 20px 30px 20px;
+    padding: 92px 20px 30px;
   }
 
   .booking-title {
-    font-size: 30px;
+    font-size: 34px;
     margin-bottom: 20px;
   }
 
@@ -265,8 +229,13 @@
     gap: 30px;
   }
 
-  .booking-left { flex: 1; }
-  .booking-right { flex: 1; }
+  .booking-left,
+  .booking-right {
+    flex: 1;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
 
   .section-label-1, .section-label-2, .section-label-3,
   .section-label-4, .section-label-5 {
@@ -279,10 +248,20 @@
   .input-row {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
   }
 
-  .b-input { font-size: 14px; padding: 12px 14px; }
-  .b-textarea { height: 150px; font-size: 14px; }
+  .b-input {
+    font-size: 14px;
+    padding: 12px 14px;
+    width: 100%;
+  }
+
+  .b-textarea {
+    height: 150px;
+    font-size: 14px;
+  }
+
   .book-btn { font-size: 14px; padding: 14px; }
 
   .date-grid { gap: 8px; }

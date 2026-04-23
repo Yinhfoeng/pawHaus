@@ -355,7 +355,37 @@
 .bag-checkout-btn:hover {
   background-color: #f0e8d8;
 }
-  
+
+@media screen and (max-width: 768px) {
+  .product-content {
+    padding: 92px 20px 24px;
+  }
+
+  .pv-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .pv-img-wrapper {
+    flex: 1 0 100%;
+    width: 100%;
+    min-height: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .pv-name {
+    font-size: 24px;
+  }
+
+  .pv-btn-group {
+    flex-direction: column;
+  }
+
+  .pv-btn-secondary {
+    width: 100%;
+    max-width: none;
+  }
 
   .accordion-toggle {
     font-size: 14px;
@@ -366,6 +396,7 @@
   }
 
   .bag-sidebar {
+    width: 100%;
     padding: 16px 12px;
   }
 
@@ -389,31 +420,5 @@
   .bag-checkout-btn {
     font-size: 14px;
     padding: 12px;
-  }
-/* ── MOBILE RESPONSIVE (iPhone 14 Pro Max) ── */
-@media screen and (max-width: 430px) {
-  .product-content {
-    padding: 100px 20px 20px 20px;
-  }
-
-  .pv-top {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .pv-img-wrapper {
-    flex: 1 0 100%;
-    width: 100%;
-    min-height: 250px;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .pv-name {
-    font-size: 24px;
-  }
-
-  .bag-sidebar {
-    width: 100%; /* Full screen drawer on mobile */
   }
 }
