@@ -213,6 +213,7 @@
   border-color: #e0d5c8;
   cursor: not-allowed;
 }
+
   
 
   .b-textarea {
@@ -303,4 +304,39 @@
     font-size: 11px;
     padding: 9px 4px;
   }
+}
+/* ── Google Calendar API additions ── */
+
+.slots-loading {
+  font-size: 12px;
+  font-weight: 400;
+  color: #9a7c65;
+  margin-left: 10px;
+  letter-spacing: 0.5px;
+}
+
+.slots-error {
+  background: #fff5f5;
+  border: 1px solid #e5b8b8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #8b2020;
+  margin-bottom: 12px;
+}
+
+.slot-skeleton {
+  background: linear-gradient(90deg, #e8dfd0 25%, #cbbfa8 50%, #e8dfd0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  cursor: default;
+  pointer-events: none;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
