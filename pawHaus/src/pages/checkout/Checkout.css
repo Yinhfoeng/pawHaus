@@ -20,6 +20,7 @@
   display: flex;
   gap: 60px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* LEFT */
@@ -144,7 +145,6 @@
 
 /* PAY BUTTON */
 .pay-btn {
-
   background-color: #3e2723;
   color: white;
   border: none;
@@ -159,6 +159,11 @@
 }
 
 .pay-btn:hover { background-color: #3e2b1c; }
+
+.checkout-pay-wrap {
+  display: none;
+  width: 100%;
+}
 
 /* RIGHT - ORDER SUMMARY */
 .checkout-right { flex: 1; }
@@ -266,10 +271,20 @@
   .checkout-body {
     flex-direction: column;
     gap: 24px;
+    align-items: center;
   }
 
-  .checkout-left { flex: 1; }
-  .checkout-right { flex: 1; }
+  .checkout-left,
+  .checkout-right,
+  .checkout-pay-wrap {
+    flex: 1;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .checkout-left {
+    align-items: center;
+  }
 
   .co-section-label { font-size: 15px; margin-bottom: 4px; }
 
@@ -283,6 +298,15 @@
     padding: 11px 13px;
   }
 
+  .co-section-label,
+  .delivery-box,
+  .payment-box,
+  .co-full,
+  .co-input-row,
+  .order-box {
+    width: 100%;
+  }
+
   .delivery-option, .payment-option {
     padding: 12px 14px;
     gap: 10px;
@@ -292,7 +316,19 @@
   .delivery-desc { font-size: 11px; }
   .delivery-price { font-size: 13px; }
 
-  .pay-btn { font-size: 14px; padding: 14px; }
+  .pay-btn {
+    font-size: 14px;
+    padding: 14px;
+    margin-top: 0;
+  }
+
+  .pay-btn-desktop {
+    display: none;
+  }
+
+  .checkout-pay-wrap {
+    display: block;
+  }
 
   .order-box { padding: 18px; gap: 14px; margin-top: 0; }
   .order-title { font-size: 16px; }

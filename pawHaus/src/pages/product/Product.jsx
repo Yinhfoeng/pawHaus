@@ -260,8 +260,18 @@ export default function Product({ cart, setCart }) {
                         onClick={() =>
                           setCart((prev) => prev.filter((i) => i.id !== item.id))
                         }
+                        aria-label={`Remove ${item.name} from bag`}
                       >
-                        🗑
+                        <svg
+                          className="bag-delete-icon"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M9 3h6l1 2h4v2H4V5h4l1-2Zm-2 6h2v9H7V9Zm4 0h2v9h-2V9Zm4 0h2v9h-2V9ZM6 7h12l-1 14H7L6 7Z"
+                            fill="currentColor"
+                          />
+                        </svg>
                       </button>
                     </div>
                   </div>

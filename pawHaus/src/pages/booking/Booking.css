@@ -123,6 +123,11 @@
 
 .book-btn:hover { background-color: #2c1a0e; }
 
+.booking-book-wrap {
+  display: none;
+  width: 100%;
+}
+
 /* RIGHT */
 .booking-right {
   flex: 1;
@@ -227,14 +232,24 @@
   .booking-body {
     flex-direction: column;
     gap: 30px;
+    align-items: center;
   }
 
   .booking-left,
-  .booking-right {
+  .booking-right,
+  .booking-book-wrap {
     flex: 1;
     width: 100%;
     max-width: 360px;
     margin: 0 auto;
+  }
+
+  .book-btn-desktop {
+    display: none;
+  }
+
+  .booking-book-wrap {
+    display: block;
   }
 
   .section-label-1, .section-label-2, .section-label-3,

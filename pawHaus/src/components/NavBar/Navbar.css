@@ -177,6 +177,11 @@ body.nav-open { overflow: hidden; }
   max-width: none;
 }
 
+.mobile-menu.mobile-light .mobile-contact-btn,
+.mobile-menu.mobile-dark .mobile-contact-btn {
+  color: white;
+}
+
 @media (max-width: 768px) {
   .navbar {
     min-height: 84px;
@@ -200,5 +205,12 @@ body.nav-open { overflow: hidden; }
   .hamburger {
     display: flex;
     margin-top: 0;
+  }
+
+  .mobile-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }

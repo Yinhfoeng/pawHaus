@@ -100,6 +100,10 @@
   padding: 50px;
 }
 
+.main-card-text .btn {
+  align-self: flex-start;
+}
+
 .main-card-subtitle {
   margin: 0 0 10px;
   font-family: "Lovelo", serif;
@@ -358,6 +362,10 @@
 
   .main-card-body {
     padding-right: 0;
+  }
+
+  .main-card-text .btn {
+    align-self: center;
   }
 
   .main-card-img-wrap {

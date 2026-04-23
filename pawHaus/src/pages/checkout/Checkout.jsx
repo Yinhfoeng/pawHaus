@@ -186,7 +186,7 @@ export default function Checkout({ cart = [] }) {
             </div>
 
             {/* Pay Now */}
-            <button className="pay-btn" onClick={() => alert("Order placed!")}>
+            <button className="pay-btn pay-btn-desktop" onClick={() => alert("Order placed!")}>
               Pay Now
             </button>
           </div>
@@ -234,6 +234,12 @@ export default function Checkout({ cart = [] }) {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="checkout-pay-wrap">
+            <button className="pay-btn pay-btn-mobile" onClick={() => alert("Order placed!")}>
+              Pay Now
+            </button>
           </div>
         </div>
       </div>

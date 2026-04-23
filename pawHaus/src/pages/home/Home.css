@@ -663,12 +663,13 @@
   }
 
   .newsletter {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .newsletter-title {
     font-size: 30px;
+    text-align: left;
   }
 
   .email-input-wrapper {

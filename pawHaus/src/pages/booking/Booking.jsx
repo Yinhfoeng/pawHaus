@@ -218,7 +218,7 @@ export default function Booking() {
               onChange={handleChange}
             />
 
-            <button className="book-btn" onClick={handleSubmit}>Book Now</button>
+            <button className="book-btn book-btn-desktop" onClick={handleSubmit}>Book Now</button>
           </div>
 
           {/* ── RIGHT ── */}
@@ -290,8 +290,12 @@ export default function Booking() {
               }
             </div>
           </div>
+
+          <div className="booking-book-wrap">
+            <button className="book-btn book-btn-mobile" onClick={handleSubmit}>Book Now</button>
+          </div>
         </div>
       </div>
     </div>
   );
-}``
+}
