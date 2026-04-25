@@ -1,4 +1,3 @@
-/* ── PAGE ── */
 .services-page {
   min-height: 100vh;
   background-color: #b6cfe4 !important;
@@ -6,7 +5,6 @@
   overflow: visible;
 }
 
-/* ── HERO ── */
 .services-page .hero {
   display: flex;
   align-items: center;
@@ -63,7 +61,6 @@
   color: #3e2723;
 }
 
-/* ── MAIN CARD ── */
 .main-card-wrapper {
   position: relative;
 }
@@ -143,7 +140,6 @@
   right: 60px;
 }
 
-/* ── OPTIONS LABEL ── */
 .options-label {
   margin: 20px 0 15px;
   font-family: "Lovelo", sans-serif;
@@ -151,7 +147,6 @@
   color: #3e2723;
 }
 
-/* ── OPTIONS GRID ── */
 .options-grid {
   display: grid;
   gap: 20px;
@@ -166,7 +161,6 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* ── OPTION CARD ── */
 .option-card {
   display: flex;
   flex-direction: column;
@@ -207,7 +201,6 @@
   padding-right: 50px;
 }
 
-/* ── OPTION IMAGE ── */
 .option-img-wrap {
   width: 100%;
   height: 260px;
@@ -226,7 +219,6 @@
   vertical-align: top;
 }
 
-/* ── DAYCARE LAYOUT ── */
 .option-card.daycare-card {
   padding: 0;
 }
@@ -242,7 +234,6 @@
   padding: 36px 44px 20px; 
 }
 
-/* ── GROOMING LAYOUT ── */
 .grooming-grid {
   align-items: stretch;
 }
@@ -271,7 +262,6 @@
   flex: 1;
 }
 
-/* ── TRAINING LAYOUT ── */
 .training-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

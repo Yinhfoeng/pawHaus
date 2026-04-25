@@ -1,5 +1,3 @@
-// src/data/products.js
-
 import fresh from "../assets/13.png";
 import pink from "../assets/12.png";
 import collar from "../assets/11.png";

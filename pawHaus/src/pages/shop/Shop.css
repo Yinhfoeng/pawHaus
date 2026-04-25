@@ -11,14 +11,12 @@
   flex: 1;  
 } 
 
-/* TITLE */
 .catalog-title {
   font-size: 52px;
   color: #2c1a0e;
   margin-bottom: 24px;
 }
 
-/* FILTER BUTTONS */
 .filter-btns {
   display: flex;
   gap: 12px;
@@ -50,14 +48,12 @@
   color: white;
 }
 
-/* GRID */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px 30px;
 }
 
-/* CARD */
 .product-card {
   background-color: white;
   border-radius: 16px;
